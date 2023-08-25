@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Card from '../Card/Card.jsx';
 
 export default function Cards(props) {

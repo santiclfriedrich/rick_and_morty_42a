@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 
 export default function SearchBar(props) {
@@ -15,7 +16,7 @@ export default function SearchBar(props) {
 
    return (
       <div>
-         <input type='search' value={id} onChange={changeHandler} />
+         <input type='search' value={id} onChange={changeHandler} placeholder="ID..." />
          <button onClick={()=> onSearch(id)}>Agregar</button>
       </div>
    );
