@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import style from './SearchBar.module.css'
 
 export default function SearchBar(props) {
 
@@ -16,7 +17,7 @@ export default function SearchBar(props) {
 
    return (
       <div>
-         <input type='search' value={id} onChange={changeHandler} placeholder="ID..." />
+         <input type='search' value={id} onChange={changeHandler} placeholder="ID..." className={style.inputSearch} />
          <button onClick={()=> onSearch(id)}>Agregar</button>
       </div>
    );

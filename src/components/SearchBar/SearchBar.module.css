@@ -1,0 +1,7 @@
+.inputSearch{
+    border-color: black;
+}
+
+.inputSearch:hover{
+    border-color: rgb(81, 178, 201);
+}

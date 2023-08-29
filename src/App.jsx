@@ -9,6 +9,7 @@ import LandingPage from './views/landingPage/landingPage';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import Favorites from './views/Favorites/Favorites';
 
 
 function App() {
@@ -64,6 +65,7 @@ function App() {
             <Route path='/home' element={<Cards characters={characters} onClose={closeHandler}/>} />
             <Route path='/detail/:id' element={ <Detail /> } />
             <Route path='/about' element={ <About /> } />
+            <Route path='/favorites' element={ <Favorites /> } />
             <Route path='*' element={ <Error /> } />
          </Routes>
 

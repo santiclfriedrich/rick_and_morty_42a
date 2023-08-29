@@ -2,6 +2,8 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react"
 import validation from "../../utils/validation/validation"
+import style from './Login.module.css'
+import logorick from '../../assets/descarga.png'
 
 const Login = ({login}) => {
 
@@ -35,17 +37,20 @@ const Login = ({login}) => {
     }
 
     return(
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="Email">Email</label>
-                <input type="text" name="email" placeholder="Email..." onChange={handleChange} value={userData.email} />
-                {errors.email && <span>{errors.email}</span>}
+        <div className={style.loginContainer}>
+            <div className={style.image}>
+            <img src={logorick} alt="logo" />
+            </div>
+            <form onSubmit={handleSubmit} className={style.loginForm}>
+                <label htmlFor="Email" className={style.labelForm}>Email</label>
+                <input type="text" name="email" placeholder="Email..." onChange={handleChange} value={userData.email} className={style.inputForm} />
+                {errors.email && <span className={style.errorsForm} >{errors.email}</span>}
 
-                <label htmlFor="Password">Contraseña</label>
-                <input type="text" name="password" placeholder="Password..." onChange={handleChange} value={userData.password} />
-                {errors.password && <span>{errors.password}</span>}
+                <label htmlFor="Password" className={style.labelForm} >Contraseña</label>
+                <input type="text" name="password" placeholder="Password..." onChange={handleChange} value={userData.password} className={style.inputForm} />
+                {errors.password && <span className={style.errorsForm}>{errors.password}</span>}
 
-                <button>Submit</button>
+                <button className={style.btnForm}>Submit</button>
             </form>
         </div>
     )

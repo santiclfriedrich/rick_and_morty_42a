@@ -1,0 +1,63 @@
+.loginContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../src/assets/background-gif.gif');
+   background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+}
+
+.loginForm{ 
+    width: 300px;
+    padding: 20px;
+    border: 1px solid rgb(81, 178, 201);
+    border-radius: 5px;
+}
+
+.labelForm{
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: rgb(81, 178, 201)
+}
+
+.inputForm{
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid rgb(81, 178, 201);
+    border-radius: 3px;
+}
+
+.inputForm:focus {
+    outline: none;
+    border-color: rgb(188, 203, 80);
+  }
+
+
+.btnForm {
+  background-color: rgb(81, 178, 201);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.btnForm:hover{
+    background-color: rgb(44, 130, 151);
+}
+
+.errorsForm{
+    color: red;
+    display: flex;
+    font-size: 12px;
+    padding: 0 0 10px 10px;
+}
