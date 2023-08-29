@@ -6,7 +6,7 @@ export default function SearchBar(props) {
 
    const {onSearch} = props
 
-   const [id, setId] = useState("")
+   const [id, setId] = useState('')
 
    function changeHandler(e){
       e.preventDefault()
@@ -18,7 +18,7 @@ export default function SearchBar(props) {
    return (
       <div>
          <input type='search' value={id} onChange={changeHandler} placeholder="ID..." className={style.inputSearch} />
-         <button onClick={()=> onSearch(id)}>Agregar</button>
+         <button onClick={()=> {onSearch(id); setId('')}}>Agregar</button>
       </div>
    );
 }
