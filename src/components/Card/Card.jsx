@@ -12,7 +12,14 @@ function Card(props) {
    const {character, onClose, addFavorite, removeFavorite, favorites} = props
    const { id, name, status, species, gender, origin, image } = character
 
+   const [closeBtn, setCloseBtn] = useState(true)
    const [fav, setFav] = useState(false)
+
+   useEffect(() => {
+      if(!onClose){
+         setCloseBtn(false)
+      }
+   }, [])
 
    useEffect(() => {
       favorites.forEach((fav) => {
@@ -38,7 +45,7 @@ function Card(props) {
 
    return (
       <div>
-          <button onClick={()=> {onClose(character.id)}}>X</button>
+          
 
          {
             fav ? (
@@ -47,6 +54,8 @@ function Card(props) {
             <button onClick={ ()=> handleFavorite(character)}>🤍</button>
             )
          }
+
+         {closeBtn && <button onClick={()=> {onClose(character.id)}}>X</button> }
 
          <h2>Name: {name}</h2>
          <h2>Status: {status}</h2>

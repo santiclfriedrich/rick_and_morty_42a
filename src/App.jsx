@@ -8,6 +8,8 @@ import Error from './views/Error/Error';
 import LandingPage from './views/landingPage/landingPage';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { removeFavorite } from './redux/actions';
 import axios from 'axios';
 import Favorites from './views/Favorites/Favorites';
 
@@ -19,6 +21,7 @@ function App() {
 
    const navigate = useNavigate();
    const location = useLocation()
+   const dispatch = useDispatch()
 
    const isHomePage = location.pathname === '/'
    
@@ -51,6 +54,8 @@ function App() {
 
    function closeHandler(id){
       let deleted = characters.filter(character => character.id !== +id)
+
+      dispatch(removeFavorite(id))
 
       setCharacters(deleted)
    }
