@@ -24,15 +24,15 @@ function App() {
    const dispatch = useDispatch()
 
    const isHomePage = location.pathname === '/'
-   
-   const EMAIL = 'santi@gmail.com';
-   const PASSWORD = 'santi123';
 
    function login(userData) {
-      if (userData.password === PASSWORD && userData.email === EMAIL) {
-         setAccess(true);
-         navigate('/home');
-      }
+      const { email, password } = userData;
+      const URL = 'http://localhost:3001/rickandmorty/login/';
+      axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+         const { access } = data;
+         setAccess(data);
+         access && navigate('/home');
+      });
    }
    
    useEffect(() => {
